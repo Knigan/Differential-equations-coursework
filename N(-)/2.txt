@@ -1,0 +1,30 @@
+k= -0.011
+f1(x) = 0.9999875002 *cosh(k*x)+0.004999952501*sinh(k*x)
+k = -0.672
+
+f2(x) = 0.9584330978 *cosh(k*x)+0.2853173613*sinh(k*x)
+k = -2.763
+f3(x) = 0.7574067270*cosh(k*x)+0.6529433739*sinh(k*x)
+k = -5.532
+
+f4(x) = 0.7104515363*cosh(k*x)+0.7037461294*sinh(k*x)
+k = -21.96
+f5(x) = 0.7071067812*cosh(k*x)+ 0.7071067812*sinh(k*x)
+k = -61
+
+f6(x) = 0.7071067812*cosh(k*x)+0.7071067812*sinh(k*x)
+k = -119.5
+
+f7(x) = 0.7071067812*cosh(k*x)+ 0.7071067812*sinh(k*x)
+fplot(x,f1(x), [0 1], 'LineWidth', 3, 'Color', 'Red', 'DisplayName','r = 0.001')
+hold on
+fplot(x,f2(x), [0 1], 'LineWidth', 3, 'Color', '[0.8500 0.3250 0.0980]', 'DisplayName','r = 0.06')
+fplot(x,f3(x), [0 1], 'LineWidth', 3, 'Color', '[1 1 0]', 'DisplayName','r = 0.2')
+fplot(x,f4(x), [0 1], 'LineWidth', 3, 'Color', 'Green', 'DisplayName','r = 0.3')
+fplot(x,f5(x), [0 1], 'LineWidth', 3, 'Color', 'Cyan', 'DisplayName','r = 0.6')
+fplot(x,f6(x), [0 1], 'LineWidth', 3, 'Color', 'Blue', 'DisplayName','r = 1')
+fplot(x,f7(x), [0 1], 'LineWidth', 3, 'Color', '[0.4940 0.1840 0.5560]', 'DisplayName','r = 1.4')
+set(gcf,"position",[0,0,1200,600])
+ylim([-0.5 1.5])
+hold off
+legend('Location', 'best')

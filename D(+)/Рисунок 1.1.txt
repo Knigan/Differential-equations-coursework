@@ -1,0 +1,28 @@
+syms y(x) A k B y_x(x) r alpha betta
+y(x) = A*cos(k*x)+B*sin(k*x)
+y_x(x) = diff(y(x),x)
+alpha = 5;
+betta = 6;
+0==expand(y(0)+r^2*(-alpha*y_x(0)+betta*y_x(1))*alpha)
+0==expand(y(1)+r^2*(-alpha*y_x(0)+betta*y_x(1))*betta)
+X = [1-30*k*r^2*sin(k),-25*k*r^2+30*k*r^2*cos(k);cos(k)-36*k*r^2*sin(k),sin(k)-30*k*r^2+36*k*r^2*cos(k)]
+simplify(det(X)) == 0
+sin(k)/k==r^2*(60-61*cos(k))
+y1 = sin(k)/k;
+fplot(k, y1, [0 7*pi/2], 'LineWidth', 3, 'Color', 'Black', 'DisplayName', 'sin(k)/k')
+hold on
+fplot(k, subs(r^2*(60-61*cos(k)),0.001), [0 7*pi/2], 'LineWidth', 3, 'Color', 'Red', 'DisplayName','0.000001*(60-61*cos(t))')
+fplot(k, subs(r^2*(60-61*cos(k)),0.03), [0 7*pi/2], 'LineWidth', 3, 'Color', '[0.8500 0.3250 0.0980]', 'DisplayName','0.0009*(60-61*cos(t))')
+fplot(k, subs(r^2*(60-61*cos(k)),0.06), [0 7*pi/2], 'LineWidth', 3, 'Color', '[1 1 0]', 'DisplayName','0.0036*(60-61*cos(t))')
+fplot(k, subs(r^2*(60-61*cos(k)),0.09), [0 7*pi/2], 'LineWidth', 3, 'Color', 'Green', 'DisplayName','0.0081*(60-61*cos(t))')
+fplot(k, subs(r^2*(60-61*cos(k)),0.2), [0 7*pi/2], 'LineWidth', 3, 'Color', 'Cyan', 'DisplayName','0.04*(60-61*cos(t))')
+fplot(k, subs(r^2*(60-61*cos(k)),0.4), [0 7*pi/2], 'LineWidth', 3, 'Color', 'Blue', 'DisplayName','0.16*(60-61*cos(t))')
+fplot(k, subs(r^2*(60-61*cos(k)),1), [0 7*pi/2], 'LineWidth', 3, 'Color', '[0.4940 0.1840 0.5560]', 'DisplayName','1*(60-61*cos(t))')
+hold off
+ax = gca;
+xlim([3*pi/2 5*pi/2])
+ylim([-0.02 0.02])
+ax.XTick = 0:pi/2:4*pi;
+ax.XTickLabel = {'0','\pi/2','\pi','3\pi/2','2\pi','5\pi/2','3\pi','7\pi/2','4\pi'};
+set(gcf,"position",[0,0,1200,600])
+legend('Location', 'best')

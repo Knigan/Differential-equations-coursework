@@ -1,0 +1,26 @@
+k = 9.423
+f1(x) = 5*cos(k*x)+(6-5*cos(k))/sin(k)*sin(k*x)
+k = 8.55
+f2(x) = 5*cos(k*x)+(6-5*cos(k))/sin(k)*sin(k*x)
+k = 7.41
+f3(x) = 5*cos(k*x)+(6-5*cos(k))/sin(k)*sin(k*x)
+k = 6.9
+f4(x) = 5*cos(k*x)+(6-5*cos(k))/sin(k)*sin(k*x)
+k = 6.53
+f5(x) = 5*cos(k*x)+(6-5*cos(k))/sin(k)*sin(k*x)
+k = 6.48
+f6(x) = 5*cos(k*x)+(6-5*cos(k))/sin(k)*sin(k*x)
+k = 6.4
+f7(x) = 5*cos(k*x)+(6-5*cos(k))/sin(k)*sin(k*x)
+fplot(x,f1(x), [0 1], 'LineWidth', 3, 'Color', 'Red', 'DisplayName','r = 0.001')
+hold on
+fplot(x,f2(x), [0 1], 'LineWidth', 3, 'Color', '[0.8500 0.3250 0.0980]', 'DisplayName','r = 0.03')
+fplot(x,f3(x), [0 1], 'LineWidth', 3, 'Color', '[1 1 0]', 'DisplayName','r = 0.06')
+fplot(x,f4(x), [0 1], 'LineWidth', 3, 'Color', 'Green', 'DisplayName','r = 0.09')
+fplot(x,f5(x), [0 1], 'LineWidth', 3, 'Color', 'Cyan', 'DisplayName','r = 0.2')
+fplot(x,f6(x), [0 1], 'LineWidth', 3, 'Color', 'Blue', 'DisplayName','r = 0.4')
+fplot(x,f7(x), [0 1], 'LineWidth', 3, 'Color', '[0.4940 0.1840 0.5560]', 'DisplayName','r = 1')
+set(gcf,"position",[0,0,1200,600])
+ylim([-30 30])
+hold off
+legend('Location', 'best')
